@@ -11,8 +11,18 @@ install both Java and maven (https://sdkman.io/)
 mvn clean package
 ```
 
-2. Then run docker-compose up to start the application:
+2. Adjust the JAVA_OPTS in the Dockerfile to the desired value, we are setting both max heap size and initial heap size to 512m:
 
-```shell
-docker-compose up
-```
+`-Xmx512m -Xms512m`
+
+3. Then run docker-compose to start the application:
+
+
+`docker-compose up`
+
+3. You can use the following URL to get the max heap sie of the JVM: 
+
+`http://localhost:9001/actuator/metrics/jvm.memory.max?tag=area:heap`
+
+
+
