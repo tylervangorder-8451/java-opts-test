@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      args:
+        JAR_FILE: target/*.jar
+    volumes:
+      - ./app/:/usr/app/api/
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      JAVA_OPTS: -Xmx512m -Xms512m
