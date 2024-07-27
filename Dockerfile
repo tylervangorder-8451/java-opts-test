@@ -41,4 +41,4 @@ EXPOSE 8080 8081
 
 # Run the service.
 ARG JAVA_OPTS
-CMD ["sh", "-c", "java -Dserver.port=8080 ${JAVA_OPTS} org.springframework.boot.loader.launch.JarLauncher"]
+CMD java ${JAVA_OPTS} org.springframework.boot.loader.launch.JarLauncher
